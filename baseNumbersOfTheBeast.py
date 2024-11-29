@@ -29,11 +29,12 @@ def summationIntegersTo36(printVerbose = False):
 # base 1 to base 36.  The number system of base 1 here 
 # is defined as only the number one.
 def summationBasesTo36(printVerbose = False):
+	csum = 1; # Begin with base 1, which is always 1
+	numberString = "10";
 	if printVerbose == True:
 		hr();
 		print(Fore.LIGHTYELLOW_EX,"\n\n	Summation of values for the numerals \"10\" in number systems 1 to 36.\n	Sums are shown in decimal.\n",Fore.RESET);
-	csum = 1; # Begin with base 1, which is always 1
-	numberString = "10";
+		print("	'10' in base ",str(1).ljust(2,' ')," =  1",Fore.LIGHTYELLOW_EX,"   sum: ",str(csum).rjust(3,' '),Fore.RESET);
 	for i in range(2,37):
 		csum += int(numberString,i);
 		if printVerbose == True:
@@ -65,6 +66,7 @@ def summationRomanNumerals(printVerbose = False):
 		print("	L = ",Fore.LIGHTYELLOW_EX,"50",Fore.RESET);
 		print("	C = ",Fore.LIGHTYELLOW_EX,"100",Fore.RESET);
 		print("	D = ",Fore.LIGHTYELLOW_EX,"500",Fore.RESET);
+		print("\n");
 		print("	I + V + X + L + C + D = ",Fore.LIGHTRED_EX,"666",Fore.RESET);
 		hr();
 	return csum;
@@ -77,7 +79,7 @@ while(True):
 	print("		(3) Summation of the first 6 Roman numerals, which are the Roman numerals");
 	print("			which cannot be substituted for thousands bar notation.");
 	print("		(4) Exit",Fore.RESET);
-	choice = input("\n	Enter a menu option: \n");
+	choice = input("\n	Enter a menu option: \n	");
 	if choice == "1":
 		summationIntegersTo36(True);
 	elif choice == "2":
